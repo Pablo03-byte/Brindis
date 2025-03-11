@@ -104,38 +104,41 @@ section {
    SECCIÓN DE CONTACTO
    ====================== */
 .contacto-contenedor {
-    background: rgba(255,255,255,0.9);
+    background: url(Imagenes/fondo.jpg);
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(146, 43, 73, 0.1);
     margin: 20px auto;
     max-width: 800px;
+    color: black;
 }
 
 .contacto-form {
     box-sizing: border-box;
     padding: 0 10%;
+    color: black;
 }
 
 .contacto-form label {
     display: block;
     font-weight: 700;
     margin: 15px 0 5px;
-    color: #8A1C3D;
+    color: black;
 }
 
 .contacto-form input,
 .contacto-form textarea {
-    background: rgba(255,255,255,0.9);
-    border: 2px solid #F43662;
+    background: #F691A9;
+    border: 2px solid black;
     padding: 12px;
     width: 80%;
     max-width: 500px;
+    color: black;
 }
 
 .contacto-form button {
     background: #F43662;
-    color: white;
+    color: black;
     padding: 12px 30px;
     border: none;
     border-radius: 25px;
@@ -145,12 +148,12 @@ section {
 }
 
 .contacto-form button:hover {
-    background: #8A1C3D;
+    background: black;
     transform: translateY(-2px);
 }
 
 .info-contacto {
-    border-left: 4px solid #F43662;
+    border-left: 4px solid black;
     padding-left: 20px;
     margin: 30px 0;
 }
@@ -160,7 +163,7 @@ section {
 }
 
 .info-contacto strong {
-    color: #F43662;
+    color: black;
     font-weight: 700;
 }
 
@@ -321,3 +324,10 @@ h1, h2 {
     color: #F691A9; /* Placeholder visible */
 }
 
+/* ======================
+    AJUSTES IMAGENES
+====================== */
+.producto-imagen {
+    height: 500px;
+    width: auto;
+}
