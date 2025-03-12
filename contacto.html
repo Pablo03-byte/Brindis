@@ -7,12 +7,19 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Radley:ital@0;1&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Modifica el header así -->
     <header>
         <div class="content">
             <div class="menu container">
+                <input type="checkbox" id="menu-toggle" hidden>
+                <label for="menu-toggle" class="menu-icon">
+                    <i class="fas fa-bars"></i>
+                </label>
+                
                 <a href="index.html" class="logo">
                     <img src="Imagenes/logo.png" alt="Bolsos de Autor">
                 </a>
@@ -26,14 +33,12 @@
                         <li><a href="producto.html">Producto</a></li>
                     </ul>
                 </nav>
-    
-                <div class="menu-logo">
-                    <img src="Imagenes/menu-icon.png" alt="Menú">
-                </div>
+                
+                <!-- Fondo oscuro para el menú -->
+                <div class="navbar-backdrop"></div>
             </div>
         </div>
     </header>
-    
     
 
     <section class="contacto">
@@ -66,5 +71,135 @@
         <p>&copy; 2025 Brindis. Inspirados en la elegancia de la coctelería.</p>
     </footer>
     
+    <script>
+        // mobile-menu.js
+document.addEventListener('DOMContentLoaded', () => {
+  class MobileMenu {
+    constructor() {
+      this.DOM = {
+        menuToggle: document.getElementById('menu-toggle'),
+        navbar: document.querySelector('.navbar'),
+        menuIcon: document.querySelector('.menu-icon'),
+        pageContent: document.querySelector('main'),
+        links: document.querySelectorAll('.navbar a')
+      }
+      
+      this.settings = {
+        animationDuration: 300,
+        swipeThreshold: 50,
+        menuActive: false
+      }
+      
+      this.init()
+    }
+
+    init() {
+      this.setupEventListeners()
+      this.setupA11y()
+    }
+
+    setupEventListeners() {
+      this.DOM.menuToggle.addEventListener('change', () => this.toggleMenu())
+      document.addEventListener('click', (e) => this.handleOutsideClick(e))
+      window.addEventListener('scroll', () => this.closeOnScroll(), { passive: true })
+      this.setupSwipeGestures()
+      
+      this.DOM.links.forEach(link => {
+        link.addEventListener('click', () => this.handleMenuLinkClick())
+      })
+      
+      this.setupResizeObserver()
+    }
+
+    setupA11y() {
+      this.DOM.menuToggle.setAttribute('aria-label', 'Menú principal')
+      this.DOM.navbar.setAttribute('aria-hidden', 'true')
+      this.DOM.menuIcon.setAttribute('role', 'button')
+      this.DOM.menuIcon.setAttribute('aria-label', 'Alternar menú')
+      this.DOM.menuIcon.setAttribute('aria-expanded', 'false')
+    }
+
+    toggleMenu() {
+      this.settings.menuActive = !this.settings.menuActive
+      
+      // Cambio de ícono Font Awesome
+      this.DOM.menuIcon.innerHTML = this.settings.menuActive 
+        ? '<i class="fas fa-times" aria-hidden="true"></i>' 
+        : '<i class="fas fa-bars" aria-hidden="true"></i>'
+      
+      this.DOM.navbar.classList.toggle('active', this.settings.menuActive)
+      this.DOM.navbar.setAttribute('aria-hidden', String(!this.settings.menuActive))
+      this.DOM.menuIcon.setAttribute('aria-expanded', String(this.settings.menuActive))
+      document.body.style.overflow = this.settings.menuActive ? 'hidden' : ''
+      this.animateMenuTransition()
+    }
+
+    animateMenuTransition() {
+      this.DOM.navbar.style.transform = `translateX(${this.settings.menuActive ? '0' : '-100%'})`
+      requestAnimationFrame(() => {
+        this.DOM.navbar.style.transition = `transform ${this.settings.animationDuration}ms ease`
+      })
+    }
+
+    handleOutsideClick(e) {
+      if (!this.DOM.navbar.contains(e.target) && 
+          !this.DOM.menuIcon.contains(e.target) &&
+          this.settings.menuActive) {
+        this.toggleMenu()
+      }
+    }
+
+    closeOnScroll() {
+      if (this.settings.menuActive && window.scrollY > 50) {
+        this.toggleMenu()
+      }
+    }
+
+    setupSwipeGestures() {
+      let touchStartX = 0
+      
+      document.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX
+      }, { passive: true })
+
+      document.addEventListener('touchend', e => {
+        const touchEndX = e.changedTouches[0].screenX
+        const deltaX = touchEndX - touchStartX
+        
+        if (Math.abs(deltaX) > this.settings.swipeThreshold && deltaX < 0 && this.settings.menuActive) {
+          this.toggleMenu()
+        }
+      }, { passive: true })
+    }
+
+    handleMenuLinkClick() {
+      this.toggleMenu()
+      this.DOM.pageContent.focus()
+    }
+
+    setupResizeObserver() {
+      const resizeObserver = new ResizeObserver(() => {
+        if (window.innerWidth > 768 && this.settings.menuActive) {
+          this.toggleMenu()
+        }
+      })
+      resizeObserver.observe(document.documentElement)
+    }
+  }
+
+  // Inicializar menú
+  const mobileMenu = new MobileMenu()
+
+  // Smooth scroll para todos los enlaces
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault()
+      const target = document.querySelector(this.getAttribute('href'))
+      target?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    })
+  })
+})
+    </script>
+
 </body>
 </html>

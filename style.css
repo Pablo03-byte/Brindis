@@ -696,3 +696,213 @@ section:not(.contacto-contenedor) p,
     cursor: pointer;
 }
 
+/* ======================
+   RESPONSIVE MOVIL
+   ====================== */
+@media (max-width: 768px) {
+    /* Menu hamburguesa */
+    .menu .navbar {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: #F7D4D8;
+        flex-direction: column;
+        padding: 20px;
+        transition: 0.3s;
+        z-index: 999;
+    }
+    
+    .menu .navbar.active {
+        right: 0;
+    }
+    
+    .menu label {
+        display: block !important;
+        z-index: 1000;
+        cursor: pointer;
+    }
+    
+    .navbar ul {
+        flex-direction: column;
+        margin-top: 50px;
+    }
+    
+    /* Logo */
+    .logo img {
+        max-width: 150px;
+    }
+    
+    /* Header */
+    header {
+        padding: 10px;
+        position: relative;
+    }
+    
+    /* Ajustes generales */
+    section {
+        padding: 20px;
+    }
+    
+    /* Grid productos */
+    .productos-container {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Sección nosotros */
+    .nosotros-contenedor {
+        flex-direction: column;
+    }
+    
+    .nosotros-imagen,
+    .nosotros-texto {
+        width: 100%;
+    }
+    
+    /* Formulario contacto */
+    .contacto-contenedor {
+        padding: 15px;
+    }
+    
+    .contacto-form input,
+    .contacto-form textarea {
+        width: 100%;
+    }
+    
+    /* Tipografía móvil */
+    h1, h2 {
+        font-size: 2rem;
+    }
+    
+    body {
+        font-size: 1rem;
+    }
+    
+    /* Menú fijo */
+    .menu.container {
+        padding: 10px 15px;
+    }
+    
+    /* Ajuste imágenes galería */
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+    
+    .galeria img {
+        max-width: 100%;
+    }
+    
+    /* Sección sobre nosotros */
+    .sobre-contenedor {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .sobre-imagen img {
+        height: 400px;
+        max-width: 100%;
+        transform: none;
+    }
+    
+    .sobre-texto {
+        padding: 20px;
+    }
+}
+
+/* Estilos del ícono del menú */
+.menu-icon {
+    cursor: pointer;
+    position: fixed;
+    top: 25px;
+    left: 20px;
+    z-index: 1000;
+    font-size: 1.8rem;
+    color: #F43662;
+    transition: transform 0.3s ease;
+  }
+  
+  .menu-icon:hover {
+    transform: scale(1.1);
+  }
+  
+  .menu-icon i {
+    vertical-align: middle;
+  }
+  
+  /* Ocultar checkbox */
+  #menu-toggle {
+    display: none;
+  }
+
+  /* MENÚ MÓVIL FUNCIONAL */
+@media (max-width: 768px) {
+    .menu .navbar {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100vh;
+        width: 280px;
+        background: #F7D4D8;
+        padding: 80px 30px 30px;
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 998;
+        overflow-y: auto;
+        box-shadow: 4px 0 20px rgba(191, 74, 30, 0.1);
+    }
+    
+    .menu .navbar.active {
+        left: 0;
+    }
+    
+    .menu-icon {
+        display: block !important;
+        position: fixed;
+        top: 25px;
+        left: 20px;
+        font-size: 28px;
+        color: #F43662;
+        z-index: 999;
+        background: rgba(247, 212, 216, 0.9);
+        padding: 8px;
+        border-radius: 50%;
+        box-shadow: 0 2px 8px rgba(191, 74, 30, 0.1);
+    }
+    
+    .navbar ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .navbar ul li a {
+        font-size: 1.4rem;
+        padding: 12px;
+        border-radius: 8px;
+        transition: 0.3s;
+        display: block;
+    }
+    
+    .navbar ul li a:hover {
+        background: rgba(244, 54, 98, 0.1);
+        transform: translateX(10px);
+    }
+    
+    /* Fondo oscuro al abrir menú */
+    .navbar-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 997;
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.3s;
+    }
+    
+    .navbar.active + .navbar-backdrop {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
