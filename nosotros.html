@@ -5,50 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre Nosotros - Bolsos de Autor</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap">
-
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Radley:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="content">
-            <div class="menu container">
-                <a href="index.html" class="logo">
-                    <img src="Imagenes/logo.png" alt="Bolsos de Autor">
-                </a>
-                <label for="menu">
-                    <img src="Imagenes/logo.png" class="menu-logo" alt="">
-                </label>
-                <nav class="navbar">
-                    <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="nosotros.html">Nosotros</a></li>
-                        <li><a href="fundamentos.html">Fundamentos</a></li>
-                        <li><a href="contacto.html">Contáctanos</a></li>
-                        <li><a href="producto.html">Producto</a></li>
-                    </ul>
-                </nav>
-            </div>
+    <!-- Modifica el header así -->
+<header>
+    <div class="content">
+        <div class="menu container">
+            <!-- Modifica la parte del navbar-left así: -->
+<nav class="navbar navbar-left">
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotras</a></li>
+    </ul>
+</nav>
+
+            <a href="index.html" class="logo">
+                <img src="Imagenes/logo.png" alt="Bolsos de Autor">
+            </a>
+
+            <nav class="navbar navbar-right">
+                <ul>
+                    <li><a href="fundamentos.html">Fundamentos</a></li>
+                    <li><a href="contacto.html">Contáctanos</a></li>
+                    <li><a href="producto.html">Producto</a></li>
+                </ul>
+            </nav>
+
+            <label for="menu">
+                <img src="Imagenes/logo.png" class="menu-logo" alt="">
+            </label>
         </div>
-    </header>
+    </div>
+</header>
     
-    <section id="nosotros">
-        <h2>Quiénes Somos</h2>
-        <p>
-            Bienvenidos a <strong>Brindis</strong>, Una marca de accesorios para mujeres diseñada para potenciar
-            la parte más explosiva y única que tienen cada una de ellas.
-        </p>   
-        
-        <p>
-            La inspiración del nombre nace de que como marca brindamos dos
-            servicios distintos en uno, el poder cargar el teléfono en cualquier
-            momento del día y a la vez llevar un bolso con un diseño distintivo.
-        </p>  
-        <p>
-            La marca entiende la moda como un lenguaje de expresión y una
-            herramienta de empoderamiento y la seguridad en una misma que
-            busca poder diferenciarse.
-        </p>
-    </section>
+    <!-- En tu HTML, modifica la sección nosotros así: -->
+<section id="nosotros">
+    <div class="nosotros-contenedor">
+        <div class="nosotros-imagen">
+            <!-- Agrega tu imagen aquí -->
+            <img src="Imagenes/about us.jpeg" alt="Sobre Brindis">
+        </div>
+        <div class="nosotros-texto">
+            <h2>Quiénes Somos</h2>
+            <p>
+                Bienvenidos a <strong>Brindis</strong>, Una marca de accesorios para mujeres diseñada para potenciar
+                la parte más explosiva y única que tienen cada una de ellas.
+            </p>   
+            <p>
+                La inspiración del nombre nace de que como marca brindamos dos
+                servicios distintos en uno, el poder cargar el teléfono en cualquier
+                momento del día y a la vez llevar un bolso con un diseño distintivo.
+            </p>  
+            <p>
+                La marca entiende la moda como un lenguaje de expresión y una
+                herramienta de empoderamiento y la seguridad en una misma que
+                busca poder diferenciarse.
+            </p>
+            
+        </div>
+    </div>
+</section>
+
 
     <footer>
         <p>&copy; 2025 Brindis. Inspirados en la elegancia de la coctelería.</p>

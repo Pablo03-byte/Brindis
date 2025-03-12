@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Radley:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap');
 /* ======================
    ESTILOS BASE
    ====================== */
@@ -29,7 +31,7 @@ h1, h2 {
    ESTRUCTURA PRINCIPAL
    ====================== */
 header {
-    background-color: #F691A9;
+    background-color: transparent; /* Cambiado a transparente */
     color: #F43662;
     padding: 20px;
     font-size: 2em;
@@ -59,8 +61,9 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
-    background: #F691A9;
+    padding: 10px 10px;
+    background: transparent; /* Cambiado a transparente */
+    backdrop-filter: blur(5px); /* Opcional: efecto de desenfoque */
 }
 
 .menu .navbar {
@@ -69,7 +72,7 @@ section {
 
 .menu .navbar ul {
     display: flex;
-    gap: 15px;
+    gap: 5px;
 }
 
 .menu .navbar ul li a {
@@ -142,13 +145,13 @@ section {
     padding: 12px 30px;
     border: none;
     border-radius: 25px;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     margin-top: 20px;
     transition: all 0.3s;
 }
 
 .contacto-form button:hover {
-    background: black;
+    background: #F43662;
     transform: translateY(-2px);
 }
 
@@ -276,7 +279,6 @@ section:not(.contacto-contenedor) p,
     line-height: 1.8; /* Espaciado aumentado */
 }
 
-/* Conservar Dancing Script solo para elementos cortos */
 h1, h2, 
 .menu .navbar ul li a,
 .contacto-form button {
@@ -317,11 +319,11 @@ h1, h2 {
 /* Contraste en formulario */
 .contacto-form label {
     font-size: 1.4rem;
-    color: #6D2137 !important; /* Forzar color */
+    color: black !important;
 }
 
 .contacto-form input::placeholder {
-    color: #F691A9; /* Placeholder visible */
+    color: #F691A9;
 }
 
 /* ======================
@@ -330,4 +332,532 @@ h1, h2 {
 .producto-imagen {
     height: 500px;
     width: auto;
+}
+
+/* Agrega esto en tu CSS */
+#nosotros {
+    padding: 0;
+}
+
+.nosotros-contenedor {
+    display: flex;
+    min-height: 70vh;
+}
+
+.nosotros-imagen,
+.nosotros-texto {
+    flex: 1;
+    width: 50%;
+}
+
+.nosotros-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nosotros-texto {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Versión móvil */
+@media (max-width: 768px) {
+    .nosotros-contenedor {
+        flex-direction: column;
+    }
+    
+    .nosotros-imagen,
+    .nosotros-texto {
+        width: 100%;
+        height: auto;
+    }
+    
+    .nosotros-texto {
+        padding: 30px 20px;
+    }
+}
+
+/* Opcional: Estilo decorativo para separar secciones */
+.nosotros-texto h2 {
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.nosotros-texto h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: #F43662;
+}
+
+/* ESTILOS PARA LA COLECCIÓN */
+.coleccion-martini {
+    padding: 40px 20px;
+    background: #fff5f7;
+}
+
+.productos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.producto-card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(191, 74, 30, 0.1);
+    transition: all 0.3s ease;
+    background: white;
+    min-height: 400px;
+}
+
+.producto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(191, 74, 30, 0.2);
+}
+
+.producto-front {
+    padding: 20px;
+    text-align: center;
+}
+
+.producto-imagen {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    margin: 0 auto 15px;
+    transition: transform 0.3s;
+}
+
+.producto-basico {
+    padding: 15px;
+}
+
+.producto-nombre {
+    font-size: 1.5em; /* Tamaño reducido */
+    line-height: 1.2;
+    margin-bottom: 10px;
+    padding: 0 10px; /* Espacio respiración */
+    word-break: break-word; /* Ajuste texto largo */
+}
+
+.producto-color {
+    color: #BF4A1E;
+    font-size: 1.1em;
+}
+
+.producto-detalle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    background: rgba(247, 212, 216, 0.95);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    overflow-y: auto;
+}
+
+.producto-card:hover .producto-detalle {
+    opacity: 1;
+    visibility: visible;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.galeria img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.especificaciones {
+    font-family: 'Segoe UI', sans-serif;
+    color: #6d2137;
+    font-size: 0.9em;
+}
+
+.precio {
+    font-family: 'Dancing Script', cursive;
+    color: #F43662;
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Versión móvil */
+@media (max-width: 768px) {
+    .producto-card {
+        min-height: 300px;
+    }
+    
+    .producto-detalle {
+        position: relative; /* Cambia de absolute a relative */
+        opacity: 1;
+        visibility: visible;
+        background: rgba(247, 212, 216, 0.95);
+        padding: 15px;
+        transform: translateY(-30px); /* Ajuste de posición */
+        margin-top: -30px;
+        transition: all 0.3s ease;
+        overflow: visible; /* Elimina barra de scroll */
+    }
+    
+    .producto-card.active .producto-detalle {
+        display: block;
+    }
+    
+    .producto-front {
+        padding-bottom: 30px; /* Espacio para el detalle */
+    }
+}
+
+/* Añade esto en tu CSS */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px; /* Reducir espacio entre imágenes */
+    margin: 10px auto;
+    max-width: 400px; /* Limitar ancho máximo del contenedor */
+}
+
+.galeria img {
+    width: 100%;
+    max-width: 180px; /* Tamaño máximo reducido */
+    height: 150px; /* Altura fija más pequeña */
+    object-fit: cover; /* Mantiene la proporción */
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.galeria img:hover {
+    transform: scale(1.05); /* Efecto hover discreto */
+}
+
+/* Versión móvil */
+@media (max-width: 768px) {
+    .producto-detalle {
+        transform: none;
+        margin-top: 0;
+    }
+    
+    .producto-card {
+        min-height: 300px;
+    }
+}
+
+.productos-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    gap: 20px; /* Espacio entre elementos */
+    max-width: 800px; /* Ancho máximo ajustado */
+    margin: 0 auto; /* Centrar el contenedor */
+    padding: 20px;
+}
+
+/* Versión móvil */
+@media (max-width: 768px) {
+    .productos-container {
+        grid-template-columns: 1fr; /* 1 columna */
+        max-width: 400px;
+    }
+}
+
+/* Ajustar altura de tarjetas para mejor alineación */
+.producto-card {
+    height: auto; /* Elimina altura fija */
+    min-height: 400px; /* Altura mínima en lugar de fija */
+    overflow: visible; /* Elimina recorte de contenido */
+}
+
+/* ======================
+   BARRA TRANSPARENTE
+   ====================== */
+   header {
+    background: transparent !important; /* Fondo totalmente transparente */
+    box-shadow: none !important; /* Elimina sombras */
+    border-bottom: none !important; /* Quita bordes */
+}
+
+.menu {
+    background: transparent !important;
+    backdrop-filter: none !important; /* Elimina efecto de desenfoque si existía */
+}
+
+.navbar {
+    background: transparent !important;
+}
+
+/* Versión móvil */
+@media (max-width: 901px) {
+    .menu .navbar {
+        background: transparent !important; /* Quita el gradiente en móvil */
+    }
+    
+    .navbar ul li a {
+        color: #F43662 !important; /* Mantiene color de los links */
+    }
+}
+
+/* ======================
+   BARRA FIJA
+   ====================== */
+   header {
+    position: fixed !important;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Asegura que esté por encima del contenido */
+    transition: background 0.3s ease; /* Efecto suave al hacer scroll */
+}
+
+/* Añade margen al primer elemento después del header */
+body > section:first-of-type,
+body > main:first-of-type {
+    margin-top: 100px; /* Ajusta según altura de tu header */
+}
+
+/* Versión móvil - ajuste especial */
+@media (max-width: 901px) {
+    header {
+        position: static !important; /* Desactiva fixed en móvil si es necesario */
+    }
+    
+    body > section:first-of-type {
+        margin-top: 0;
+    }
+}
+
+/* Añade estos estilos */
+.menu {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.navbar {
+    flex: 1;
+    max-width: 40%;
+}
+
+.navbar-left {
+    justify-content: flex-start;
+    padding-right: 15%;
+}
+
+.navbar-right {
+    justify-content: flex-end;
+    padding-left: 15%;
+}
+
+.navbar ul {
+    width: 100%;
+}
+
+/* Versión móvil */
+@media (max-width: 901px) {
+    .navbar-left,
+    .navbar-right {
+        display: none;
+    }
+    
+    .logo {
+        position: static;
+        transform: none;
+        margin: 0 auto;
+    }
+    
+    .menu {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+/* ESTILOS SECCIÓN IMAGEN-TEXTO */
+.sobre-nosotros {
+    padding: 50px 20px;
+    background: #fff5f7;
+}
+
+.sobre-contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.sobre-imagen {
+    flex: 1;
+}
+
+.sobre-imagen img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(191, 74, 30, 0.1);
+}
+
+.sobre-texto {
+    flex: 1;
+    padding: 30px;
+}
+
+.valores-item {
+    margin-bottom: 40px;
+}
+
+.valores-item h3 {
+    font-family: 'Dancing Script', cursive;
+    color: #F43662;
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.valores-item p {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: #6d2137;
+    margin-bottom: 20px;
+}
+
+.valores-lista {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.valores-lista li {
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 25px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.valores-lista li::before {
+    content: '♥';
+    color: #F43662;
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sobre-contenedor {
+        flex-direction: column;
+    }
+    
+    .sobre-imagen img {
+        height: 400px;
+    }
+    
+    .sobre-texto {
+        padding: 20px;
+    }
+    
+    .valores-item h3 {
+        font-size: 1.8em;
+    }
+}
+
+/* Ajustes para la imagen */
+.sobre-imagen {
+    flex: 1.2; /* Más espacio para la imagen */
+    margin-left: -50px; /* Empuja hacia la izquierda */
+    position: relative;
+    z-index: 1;
+}
+
+.sobre-imagen img {
+    height: 700px; /* Aumenta la altura */
+    max-width: 120%; /* Sobresale del contenedor */
+    object-position: left center; /* Enfoca el lado izquierdo de la imagen */
+    transform: rotate(-3deg); /* Efecto dinámico opcional */
+    border: 8px solid #fff; /* Marco decorativo */
+}
+
+/* Ajustes para el texto */
+.sobre-texto {
+    flex: 0.8; /* Reduce espacio del texto */
+    padding-left: 80px; /* Más distancia de la imagen */
+    margin-right: -30px;
+}
+
+/* Versión móvil */
+@media (max-width: 768px) {
+    .sobre-imagen {
+        margin-left: 0;
+        flex: 1;
+    }
+    
+    .sobre-imagen img {
+        max-width: 100%;
+        height: 450px;
+        transform: none;
+        border-width: 5px;
+    }
+    
+    .sobre-texto {
+        padding-left: 20px;
+        margin-right: 0;
+    }
+}
+
+/* ======================
+   AJUSTES DE TIPOGRAFÍA
+   ====================== */
+   body {
+    font-family: 'Radley', serif; /* Texto principal */
+    font-weight: 400;
+}
+
+h1, h2, h3 {
+    font-family: 'DM Serif Text', serif; /* Títulos principales */
+    font-weight: 400;
+}
+
+.menu .navbar ul li a,
+.contacto-form button,
+.precio {
+    font-family: 'La Belle Aurore', cursive; /* Elementos decorativos */
+    font-weight: 400;
+}
+
+/* Ajustes específicos para La Belle Aurore */
+.menu .navbar ul li a {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+/* Conservar Segoe UI para contenido largo */
+section:not(.contacto-contenedor) p,
+.contacto-form input,
+.contacto-form textarea,
+.info-contacto p {
+    font-family: 'Segoe UI', system-ui, sans-serif;
 }
