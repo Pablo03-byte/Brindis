@@ -4,26 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre Nosotros - Bolsos de Autor</title>
+    <!-- Enlazar con la hoja de estilo externa -->
     <link rel="stylesheet" href="style.css">
+    <!-- Fuentes de Google -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Radley:ital@0;1&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap" rel="stylesheet">
+    <!-- Fuentes de iconos Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Modifica el header así -->
+
+    <!-- Header del sitio web -->
     <header>
         <div class="content">
             <div class="menu container">
+                <!-- Checkbox para activar el menú en móvil -->
                 <input type="checkbox" id="menu-toggle" hidden>
                 <label for="menu-toggle" class="menu-icon">
                     <i class="fas fa-bars"></i>
                 </label>
                 
+                <!-- Logo de la marca -->
                 <a href="index.html" class="logo">
                     <img src="Imagenes/logo.png" alt="Bolsos de Autor">
                 </a>
     
+                <!-- Navegación del menú -->
                 <nav class="navbar">
                     <ul>
                         <li><a href="index.html">Inicio</a></li>
@@ -39,169 +46,187 @@
             </div>
         </div>
     </header>
-    
-    
-    <!-- En tu HTML, modifica la sección nosotros así: -->
-<section id="nosotros">
-    <div class="nosotros-contenedor">
-        <div class="nosotros-imagen">
-            <!-- Agrega tu imagen aquí -->
-            <img src="Imagenes/foto3.png" alt="Sobre Brindis">
-        </div>
-        <div class="nosotros-texto">
-            <h2>Quiénes Somos</h2>
-            <p>
-                Bienvenidos a <strong>Brindis</strong>, Una marca de accesorios para mujeres diseñada para potenciar
-                la parte más explosiva y única que tienen cada una de ellas.
-            </p>   
-            <p>
-                La inspiración del nombre nace de que como marca brindamos dos
-                servicios distintos en uno, el poder cargar el teléfono en cualquier
-                momento del día y a la vez llevar un bolso con un diseño distintivo.
-            </p>  
-            <p>
-                La marca entiende la moda como un lenguaje de expresión y una
-                herramienta de empoderamiento y la seguridad en una misma que
-                busca poder diferenciarse.
-            </p>
-            
-        </div>
-    </div>
-</section>
 
+    <!-- Sección sobre nosotros -->
+    <section id="nosotros">
+        <div class="nosotros-contenedor">
+            <div class="nosotros-imagen">
+                <!-- Imagen representativa de la marca -->
+                <img src="Imagenes/foto3.png" alt="Sobre Brindis">
+            </div>
+            <div class="nosotros-texto">
+                <!-- Título de la sección -->
+                <h2>Quiénes Somos</h2>
+                <!-- Párrafos que describen la marca -->
+                <p>
+                    Bienvenidos a <strong>Brindis</strong>, Una marca de accesorios para mujeres diseñada para potenciar
+                    la parte más explosiva y única que tienen cada una de ellas.
+                </p>
+                <p>
+                    La inspiración del nombre nace de que como marca brindamos dos
+                    servicios distintos en uno, el poder cargar el teléfono en cualquier
+                    momento del día y a la vez llevar un bolso con un diseño distintivo.
+                </p>
+                <p>
+                    La marca entiende la moda como un lenguaje de expresión y una
+                    herramienta de empoderamiento y la seguridad en una misma que
+                    busca poder diferenciarse.
+                </p>
+            </div>
+        </div>
+    </section>
 
+    <!-- Footer del sitio web -->
     <footer>
         <p>&copy; 2025 Brindis. Inspirados en la elegancia de la coctelería.</p>
     </footer>
 
+    <!-- Script para el manejo del menú móvil -->
     <script>
         // mobile-menu.js
-document.addEventListener('DOMContentLoaded', () => {
-  class MobileMenu {
-    constructor() {
-      this.DOM = {
-        menuToggle: document.getElementById('menu-toggle'),
-        navbar: document.querySelector('.navbar'),
-        menuIcon: document.querySelector('.menu-icon'),
-        pageContent: document.querySelector('main'),
-        links: document.querySelectorAll('.navbar a')
-      }
-      
-      this.settings = {
-        animationDuration: 300,
-        swipeThreshold: 50,
-        menuActive: false
-      }
-      
-      this.init()
-    }
+        document.addEventListener('DOMContentLoaded', () => {
+            // Clase MobileMenu para gestionar la interacción con el menú
+            class MobileMenu {
+                constructor() {
+                    this.DOM = {
+                        menuToggle: document.getElementById('menu-toggle'),
+                        navbar: document.querySelector('.navbar'),
+                        menuIcon: document.querySelector('.menu-icon'),
+                        pageContent: document.querySelector('main'),
+                        links: document.querySelectorAll('.navbar a')
+                    }
+                    
+                    // Configuración del menú
+                    this.settings = {
+                        animationDuration: 300,
+                        swipeThreshold: 50,
+                        menuActive: false
+                    }
+                    
+                    this.init()  // Inicializa la clase
+                }
 
-    init() {
-      this.setupEventListeners()
-      this.setupA11y()
-    }
+                // Inicializa la clase MobileMenu
+                init() {
+                    this.setupEventListeners()
+                    this.setupA11y()
+                }
 
-    setupEventListeners() {
-      this.DOM.menuToggle.addEventListener('change', () => this.toggleMenu())
-      document.addEventListener('click', (e) => this.handleOutsideClick(e))
-      window.addEventListener('scroll', () => this.closeOnScroll(), { passive: true })
-      this.setupSwipeGestures()
-      
-      this.DOM.links.forEach(link => {
-        link.addEventListener('click', () => this.handleMenuLinkClick())
-      })
-      
-      this.setupResizeObserver()
-    }
+                // Configura los eventos para el menú móvil
+                setupEventListeners() {
+                    this.DOM.menuToggle.addEventListener('change', () => this.toggleMenu())  // Activar/desactivar menú
+                    document.addEventListener('click', (e) => this.handleOutsideClick(e))  // Cerrar si se hace clic fuera
+                    window.addEventListener('scroll', () => this.closeOnScroll(), { passive: true })  // Cerrar al hacer scroll
+                    this.setupSwipeGestures()  // Gestos táctiles
 
-    setupA11y() {
-      this.DOM.menuToggle.setAttribute('aria-label', 'Menú principal')
-      this.DOM.navbar.setAttribute('aria-hidden', 'true')
-      this.DOM.menuIcon.setAttribute('role', 'button')
-      this.DOM.menuIcon.setAttribute('aria-label', 'Alternar menú')
-      this.DOM.menuIcon.setAttribute('aria-expanded', 'false')
-    }
+                    // Configura eventos para los enlaces del menú
+                    this.DOM.links.forEach(link => {
+                        link.addEventListener('click', () => this.handleMenuLinkClick())
+                    })
 
-    toggleMenu() {
-      this.settings.menuActive = !this.settings.menuActive
-      
-      // Cambio de ícono Font Awesome
-      this.DOM.menuIcon.innerHTML = this.settings.menuActive 
-        ? '<i class="fas fa-times" aria-hidden="true"></i>' 
-        : '<i class="fas fa-bars" aria-hidden="true"></i>'
-      
-      this.DOM.navbar.classList.toggle('active', this.settings.menuActive)
-      this.DOM.navbar.setAttribute('aria-hidden', String(!this.settings.menuActive))
-      this.DOM.menuIcon.setAttribute('aria-expanded', String(this.settings.menuActive))
-      document.body.style.overflow = this.settings.menuActive ? 'hidden' : ''
-      this.animateMenuTransition()
-    }
+                    this.setupResizeObserver()  // Detectar cambios en el tamaño de la ventana
+                }
 
-    animateMenuTransition() {
-      this.DOM.navbar.style.transform = `translateX(${this.settings.menuActive ? '0' : '-100%'})`
-      requestAnimationFrame(() => {
-        this.DOM.navbar.style.transition = `transform ${this.settings.animationDuration}ms ease`
-      })
-    }
+                // Configuración de accesibilidad
+                setupA11y() {
+                    this.DOM.menuToggle.setAttribute('aria-label', 'Menú principal')
+                    this.DOM.navbar.setAttribute('aria-hidden', 'true')
+                    this.DOM.menuIcon.setAttribute('role', 'button')
+                    this.DOM.menuIcon.setAttribute('aria-label', 'Alternar menú')
+                    this.DOM.menuIcon.setAttribute('aria-expanded', 'false')
+                }
 
-    handleOutsideClick(e) {
-      if (!this.DOM.navbar.contains(e.target) && 
-          !this.DOM.menuIcon.contains(e.target) &&
-          this.settings.menuActive) {
-        this.toggleMenu()
-      }
-    }
+                // Alterna el estado del menú (abierto o cerrado)
+                toggleMenu() {
+                    this.settings.menuActive = !this.settings.menuActive
+                    
+                    // Cambio del ícono de Font Awesome
+                    this.DOM.menuIcon.innerHTML = this.settings.menuActive 
+                        ? '<i class="fas fa-times" aria-hidden="true"></i>' 
+                        : '<i class="fas fa-bars" aria-hidden="true"></i>'
+                    
+                    // Cambiar el estado del menú
+                    this.DOM.navbar.classList.toggle('active', this.settings.menuActive)
+                    this.DOM.navbar.setAttribute('aria-hidden', String(!this.settings.menuActive))
+                    this.DOM.menuIcon.setAttribute('aria-expanded', String(this.settings.menuActive))
+                    document.body.style.overflow = this.settings.menuActive ? 'hidden' : ''
+                    this.animateMenuTransition()  // Animación del menú
+                }
 
-    closeOnScroll() {
-      if (this.settings.menuActive && window.scrollY > 50) {
-        this.toggleMenu()
-      }
-    }
+                // Animación de transición del menú
+                animateMenuTransition() {
+                    this.DOM.navbar.style.transform = `translateX(${this.settings.menuActive ? '0' : '-100%'})`
+                    requestAnimationFrame(() => {
+                        this.DOM.navbar.style.transition = `transform ${this.settings.animationDuration}ms ease`
+                    })
+                }
 
-    setupSwipeGestures() {
-      let touchStartX = 0
-      
-      document.addEventListener('touchstart', e => {
-        touchStartX = e.changedTouches[0].screenX
-      }, { passive: true })
+                // Cierra el menú si se hace clic fuera de él
+                handleOutsideClick(e) {
+                    if (!this.DOM.navbar.contains(e.target) && 
+                        !this.DOM.menuIcon.contains(e.target) &&
+                        this.settings.menuActive) {
+                        this.toggleMenu()
+                    }
+                }
 
-      document.addEventListener('touchend', e => {
-        const touchEndX = e.changedTouches[0].screenX
-        const deltaX = touchEndX - touchStartX
-        
-        if (Math.abs(deltaX) > this.settings.swipeThreshold && deltaX < 0 && this.settings.menuActive) {
-          this.toggleMenu()
-        }
-      }, { passive: true })
-    }
+                // Cierra el menú al hacer scroll
+                closeOnScroll() {
+                    if (this.settings.menuActive && window.scrollY > 50) {
+                        this.toggleMenu()
+                    }
+                }
 
-    handleMenuLinkClick() {
-      this.toggleMenu()
-      this.DOM.pageContent.focus()
-    }
+                // Configura los gestos táctiles para cerrar el menú
+                setupSwipeGestures() {
+                    let touchStartX = 0
+                    
+                    // Detecta el inicio de un toque
+                    document.addEventListener('touchstart', e => {
+                        touchStartX = e.changedTouches[0].screenX
+                    }, { passive: true })
 
-    setupResizeObserver() {
-      const resizeObserver = new ResizeObserver(() => {
-        if (window.innerWidth > 768 && this.settings.menuActive) {
-          this.toggleMenu()
-        }
-      })
-      resizeObserver.observe(document.documentElement)
-    }
-  }
+                    // Detecta el final de un toque
+                    document.addEventListener('touchend', e => {
+                        const touchEndX = e.changedTouches[0].screenX
+                        const deltaX = touchEndX - touchStartX
+                        
+                        // Si el deslizamiento es mayor que el umbral, cierra el menú
+                        if (Math.abs(deltaX) > this.settings.swipeThreshold && deltaX < 0 && this.settings.menuActive) {
+                            this.toggleMenu()
+                        }
+                    }, { passive: true })
+                }
 
-  // Inicializar menú
-  const mobileMenu = new MobileMenu()
+                // Maneja la interacción con los enlaces del menú
+                handleMenuLinkClick() {
+                    this.toggleMenu()
+                    this.DOM.pageContent.focus()
+                }
 
-  // Smooth scroll para todos los enlaces
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault()
-      const target = document.querySelector(this.getAttribute('href'))
-      target?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    })
-  })
-})
+                // Detecta los cambios en el tamaño de la ventana
+                setupResizeObserver() {
+                    const resizeObserver = new ResizeObserver(() => {
+                        if (window.innerWidth > 768 && this.settings.menuActive) {
+                            this.toggleMenu()
+                        }
+                    })
+                    resizeObserver.observe(document.documentElement)
+                }
+            }
+
+            // Inicializa el menú móvil
+            const mobileMenu = new MobileMenu()
+
+            // Hacer scroll suave para los enlaces internos
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault()
+                    const target = document.querySelector(this.getAttribute('href'))
+                    target?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                })
+            })
+        })
     </script>
 
 </body>

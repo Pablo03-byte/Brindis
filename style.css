@@ -31,7 +31,7 @@ h1, h2 {
    ESTRUCTURA PRINCIPAL
    ====================== */
 header {
-    background-color: transparent; /* Cambiado a transparente */
+    background-color: transparent; 
     color: #F43662;
     padding: 20px;
     font-size: 2em;
@@ -62,8 +62,8 @@ section {
     align-items: center;
     justify-content: space-between;
     padding: 10px 10px;
-    background: transparent; /* Cambiado a transparente */
-    backdrop-filter: blur(5px); /* Opcional: efecto de desenfoque */
+    background: transparent; 
+    backdrop-filter: blur(5px); 
 }
 
 .menu .navbar {
@@ -172,17 +172,17 @@ section {
 
 /* Ocultar ícono en desktop */
 .menu label {
-    display: none; /* Oculto por defecto */
+    display: none; 
 }
 
 /* ======================
    AJUSTES DE LEGIBILIDAD
    ====================== */
    body {
-    font-weight: 700; /* Fuerza grosor de fuente */
-    letter-spacing: 0.5px; /* Separa caracteres */
-    text-rendering: optimizeLegibility; /* Mejor renderizado */
-    -webkit-font-smoothing: antialiased; /* Suavizado para Chrome */
+    font-weight: 700; 
+    letter-spacing: 0.5px; 
+    text-rendering: optimizeLegibility; 
+    -webkit-font-smoothing: antialiased; 
 }
 
 /* Fuente alternativa para contenido largo */
@@ -190,9 +190,9 @@ section:not(.contacto-contenedor) p,
 .contacto-form input,
 .contacto-form textarea,
 .info-contacto p {
-    font-family: 'Segoe UI', system-ui, sans-serif; /* Fuente legible */
-    font-weight: 500; /* Grosor intermedio */
-    line-height: 1.8; /* Espaciado aumentado */
+    font-family: 'Segoe UI', system-ui, sans-serif; 
+    font-weight: 500; 
+    line-height: 1.8; 
 }
 
 h1, h2, 
@@ -203,16 +203,16 @@ h1, h2,
 
 /* Corrección de contraste definitiva */
 body {
-    color: #8A1C3D; /* Color vino tinto oscuro */
+    color: #8A1C3D; 
 }
 
 /* Mejora de tamaño base */
 body {
-    font-size: 1.25rem; /* 20px base */
+    font-size: 1.25rem; 
 }
 
 h1, h2 {
-    font-size: 3rem; /* 48px */
+    font-size: 3rem; 
 }
 
 /* Contraste en formulario */
@@ -233,7 +233,7 @@ h1, h2 {
     width: auto;
 }
 
-/* Agrega esto en tu CSS */
+
 #nosotros {
     padding: 0;
 }
@@ -264,7 +264,7 @@ h1, h2 {
     background: rgba(255, 255, 255, 0.1);
 }
 
-/* Opcional: Estilo decorativo para separar secciones */
+
 .nosotros-texto h2 {
     position: relative;
     padding-bottom: 15px;
@@ -328,11 +328,11 @@ h1, h2 {
 }
 
 .producto-nombre {
-    font-size: 1.5em; /* Tamaño reducido */
+    font-size: 1.5em; 
     line-height: 1.2;
     margin-bottom: 10px;
-    padding: 0 10px; /* Espacio respiración */
-    word-break: break-word; /* Ajuste texto largo */
+    padding: 0 10px; 
+    word-break: break-word; 
 }
 
 .producto-color {
@@ -388,52 +388,52 @@ h1, h2 {
 .galeria {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 8px; /* Reducir espacio entre imágenes */
+    gap: 8px; 
     margin: 10px auto;
-    max-width: 400px; /* Limitar ancho máximo del contenedor */
+    max-width: 400px; 
 }
 
 .galeria img {
     width: 100%;
-    max-width: 180px; /* Tamaño máximo reducido */
-    height: 150px; /* Altura fija más pequeña */
-    object-fit: cover; /* Mantiene la proporción */
+    max-width: 180px; 
+    height: 150px; 
+    object-fit: cover; 
     border-radius: 5px;
     transition: transform 0.3s;
 }
 
 .galeria img:hover {
-    transform: scale(1.05); /* Efecto hover discreto */
+    transform: scale(1.05); 
 }
 
 .productos-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
-    gap: 20px; /* Espacio entre elementos */
-    max-width: 800px; /* Ancho máximo ajustado */
-    margin: 0 auto; /* Centrar el contenedor */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
+    max-width: 800px; 
+    margin: 0 auto; 
     padding: 20px;
 }
 
 /* Ajustar altura de tarjetas para mejor alineación */
 .producto-card {
-    height: auto; /* Elimina altura fija */
-    min-height: 400px; /* Altura mínima en lugar de fija */
-    overflow: visible; /* Elimina recorte de contenido */
+    height: auto; 
+    min-height: 400px; 
+    overflow: visible; 
 }
 
 /* ======================
    BARRA TRANSPARENTE
    ====================== */
    header {
-    background: transparent !important; /* Fondo totalmente transparente */
-    box-shadow: none !important; /* Elimina sombras */
-    border-bottom: none !important; /* Quita bordes */
+    background: transparent !important; 
+    box-shadow: none !important; 
+    border-bottom: none !important; 
 }
 
 .menu {
     background: transparent !important;
-    backdrop-filter: none !important; /* Elimina efecto de desenfoque si existía */
+    backdrop-filter: none !important; 
 }
 
 .navbar {
@@ -448,17 +448,17 @@ h1, h2 {
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 1000; /* Asegura que esté por encima del contenido */
-    transition: background 0.3s ease; /* Efecto suave al hacer scroll */
+    z-index: 1000; 
+    transition: background 0.3s ease; 
 }
 
-/* Añade margen al primer elemento después del header */
+
 body > section:first-of-type,
 body > main:first-of-type {
-    margin-top: 100px; /* Ajusta según altura de tu header */
+    margin-top: 100px; 
 }
 
-/* Añade estos estilos */
+
 .menu {
     display: flex;
     justify-content: space-between;
@@ -562,24 +562,24 @@ body > main:first-of-type {
 
 /* Ajustes para la imagen */
 .sobre-imagen {
-    flex: 1.2; /* Más espacio para la imagen */
-    margin-left: -50px; /* Empuja hacia la izquierda */
+    flex: 1.2; 
+    margin-left: -50px; 
     position: relative;
     z-index: 1;
 }
 
 .sobre-imagen img {
-    height: 700px; /* Aumenta la altura */
-    max-width: 120%; /* Sobresale del contenedor */
-    object-position: left center; /* Enfoca el lado izquierdo de la imagen */
-    transform: rotate(-3deg); /* Efecto dinámico opcional */
-    border: 8px solid #fff; /* Marco decorativo */
+    height: 700px; 
+    max-width: 120%; 
+    object-position: left center; 
+    transform: rotate(-3deg); 
+    border: 8px solid #fff; 
 }
 
 /* Ajustes para el texto */
 .sobre-texto {
-    flex: 0.8; /* Reduce espacio del texto */
-    padding-left: 80px; /* Más distancia de la imagen */
+    flex: 0.8; 
+    padding-left: 80px; 
     margin-right: -30px;
 }
 
@@ -587,19 +587,19 @@ body > main:first-of-type {
    AJUSTES DE TIPOGRAFÍA
    ====================== */
    body {
-    font-family: 'Radley', serif; /* Texto principal */
+    font-family: 'Radley', serif; 
     font-weight: 400;
 }
 
 h1, h2, h3 {
-    font-family: 'DM Serif Text', serif; /* Títulos principales */
+    font-family: 'DM Serif Text', serif; 
     font-weight: 400;
 }
 
 .menu .navbar ul li a,
 .contacto-form button,
 .precio {
-    font-family: 'La Belle Aurore', cursive; /* Elementos decorativos */
+    font-family: 'La Belle Aurore', cursive; 
     font-weight: 400;
 }
 
@@ -617,7 +617,7 @@ section:not(.contacto-contenedor) p,
     font-family: 'Segoe UI', system-ui, sans-serif;
 }
 
-/* 🔹 Estilos generales del header */
+/* Estilos generales del header */
 .menu.container {
     display: flex;
     justify-content: space-between;
@@ -631,7 +631,7 @@ section:not(.contacto-contenedor) p,
     width: 120px;
 }
 
-/* 🔹 Barra de navegación (desktop) */
+/* Barra de navegación (desktop) */
 .navbar ul {
     list-style: none;
     display: flex;
@@ -656,7 +656,7 @@ section:not(.contacto-contenedor) p,
     color: #d35400;
 }
 
-/* 🔹 Estilos de la barra de búsqueda */
+/* Estilos de la barra de búsqueda */
 .search-container {
     display: flex;
     align-items: center;
@@ -689,7 +689,7 @@ section:not(.contacto-contenedor) p,
     height: 20px;
 }
 
-/* 🔹 Menú hamburguesa (oculto en desktop) */
+/* Menú hamburguesa (oculto en desktop) */
 .menu-logo {
     display: none;
     width: 35px;
